@@ -1,8 +1,10 @@
 
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 #include "carte.h"
 
+// Fonction pour creer les 108 cartes
 void creerPaquet(Carte paquet[NB_CARTES]) {
 
     char couleurs[4] = {'R', 'V', 'J', 'B'};
@@ -58,8 +60,26 @@ void creerPaquet(Carte paquet[NB_CARTES]) {
     }
 }
 
+// Fonction pour afficher une carte
 void afficherCarte(Carte carte) {
 
     printf("%s %c\n", carte.type, carte.couleur);
 
+}
+
+// Fonction pour melanger le paquet
+void melangerPaquet(Carte paquet[], int nombre) {
+
+    for (int i = nombre - 1; i > 0; i--) {
+
+        // Choisir une position au hasard
+        int j = rand() % (i + 1);
+
+        // Echanger les deux cartes
+        Carte temporaire = paquet[i];
+
+        paquet[i] = paquet[j];
+
+        paquet[j] = temporaire;
+    }
 }

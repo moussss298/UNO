@@ -11,5 +11,6 @@ typedef struct {
 
 void creerPaquet(Carte paquet[NB_CARTES]);
 void afficherCarte(Carte carte);
+void melangerPaquet(Carte paquet[], int nombre);
 
 #endif
