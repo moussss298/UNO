@@ -3,7 +3,6 @@
 #include <string.h>
 #include "joueur.h"
 
-// Initialiser un joueur
 void initialiserJoueur(Joueur *joueur, const char *nom) {
 
     strcpy(joueur->nom, nom);
@@ -11,7 +10,6 @@ void initialiserJoueur(Joueur *joueur, const char *nom) {
     joueur->nbCartes = 0;
 }
 
-// Ajouter une carte a un joueur
 int ajouterCarte(Joueur *joueur, Carte carte) {
 
     if (joueur->nbCartes >= MAX_MAIN) {
@@ -25,7 +23,6 @@ int ajouterCarte(Joueur *joueur, Carte carte) {
     return 1;
 }
 
-// Retirer une carte de la main
 int retirerCarte(Joueur *joueur, int position) {
 
     if (position < 0 || position >= joueur->nbCartes) {
@@ -42,7 +39,6 @@ int retirerCarte(Joueur *joueur, int position) {
     return 1;
 }
 
-// Afficher les cartes d'un joueur
 void afficherMain(Joueur joueur) {
 
     printf("\nMain de %s :\n", joueur.nom);
