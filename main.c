@@ -2,28 +2,44 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+
 #include "carte.h"
+#include "joueur.h"
+#include "jeu.h"
 
 int main(void) {
 
+    // Creer les 108 cartes
     Carte paquet[NB_CARTES];
 
-    srand((unsigned int)time(NULL));
- 
-    creerPaquet(paquet);
+    // Creer les deux joueurs
+    Joueur humain;
+    Joueur ordinateur;
 
+    // Initialiser le hasard
+    srand((unsigned int)time(NULL));
+
+    // Creer et melanger les cartes
+    creerPaquet(paquet);
     melangerPaquet(paquet, NB_CARTES);
 
-    printf("=== PAQUET UNO MELANGE ===\n");
+    // Initialiser les joueurs
+    initialiserJoueur(&humain, "Humain");
+    initialiserJoueur(&ordinateur, "Ordinateur");
 
-    for (int i = 0; i < NB_CARTES; i++) {
+    // Distribuer 7 cartes a chaque joueur
+    for (int i = 0; i < 7; i++) {
 
-        printf("Carte %d : ", i + 1);
-        afficherCarte(paquet[i]);
+        ajouterCarte(&humain, paquet[2 * i]);
 
+        ajouterCarte(&ordinateur, paquet[2 * i + 1]);
     }
 
-    printf("\nTotal : %d cartes\n", NB_CARTES);
+    // Choisir la premiere carte sur la table
+    Carte carteTable = paquet[14];
+
+    // Afficher le plateau
+    afficherPlateau(carteTable, humain, ordinateur);
 
     return 0;
 }
