@@ -13,7 +13,7 @@ int main(void) {
     Carte paquet[NB_CARTES];
 
     // Creer les deux joueurs
-    Joueur humain;
+    Joueur moussa;
     Joueur ordinateur;
 
     // Initialiser le hasard
@@ -24,13 +24,13 @@ int main(void) {
     melangerPaquet(paquet, NB_CARTES);
 
     // Initialiser les joueurs
-    initialiserJoueur(&humain, "Humain");
+    initialiserJoueur(&moussa, "Moussa");
     initialiserJoueur(&ordinateur, "Ordinateur");
 
     // Distribuer 7 cartes a chaque joueur
     for (int i = 0; i < 7; i++) {
 
-        ajouterCarte(&humain, paquet[2 * i]);
+        ajouterCarte(&moussa, paquet[2 * i]);
 
         ajouterCarte(&ordinateur, paquet[2 * i + 1]);
     }
@@ -39,7 +39,7 @@ int main(void) {
     Carte carteTable = paquet[14];
 
     // Afficher le plateau
-    afficherPlateau(carteTable, humain, ordinateur);
+    afficherPlateau(carteTable, moussa, ordinateur);
 
     return 0;
 }

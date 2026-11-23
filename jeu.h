@@ -7,8 +7,7 @@
 
 // Afficher le plateau du jeu
 void afficherPlateau(Carte carteTable,
-                     Joueur humain,
+                     Joueur moussa,
                      Joueur ordinateur);
 
 #endif
-    <

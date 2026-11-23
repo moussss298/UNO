@@ -4,12 +4,12 @@
 
 // Fonction pour afficher le plateau
 void afficherPlateau(Carte carteTable,
-                     Joueur humain,
+                     Joueur moussa,
                      Joueur ordinateur) {
 
     printf("\n========== UNO ==========\n");
 
-    printf("Humain : %d cartes\n", humain.nbCartes);
+    printf("Moussa : %d cartes\n", moussa.nbCartes);
 
     printf("Ordinateur : %d cartes\n",
            ordinateur.nbCartes);
