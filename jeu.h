@@ -11,3 +11,4 @@ void afficherPlateau(Carte carteTable,
                      Joueur ordinateur);
 
 #endif
+    <
